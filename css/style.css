@@ -1,0 +1,867 @@
+/* Set the default font family and background color for the entire document */
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px; Default 100% 1rem = 16px */
+}
+
+/* Style for the main content area */
+main{
+    width: 100%;
+    height: auto;
+    background-color: var(--background-color) ;
+}
+
+/* Define custom CSS variables */
+:root {
+    --background-color: #FAFAF5;
+    --accent-color: #EA516F;
+    --dark-text: #022D45;
+}
+
+/* Styles for various heading levels */
+h1 {
+    color: #fff;
+    font-size: 5rem; /* 50px */
+    line-height: 6rem; /* 60px */
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 5rem; /* 50px */
+    line-height: 6rem; /* 60px */
+    font-weight: 500;
+}
+
+h3, span {
+    color: var(--accent-color);
+    font-size: 1.5rem; /* 15px */
+    text-transform: uppercase;
+    line-height: 2.3rem; /* 23px */
+    font-weight: 500;
+}
+
+h4 {
+    color: #FFF;
+    font-size: 3rem; /* 30px */
+    font-weight: 500;
+}
+
+/* Style for paragraphs */
+p {
+    line-height: 3rem; /* 30px */
+    font-size: 1.6rem; /*16px*/
+}
+
+/* Style for buttons */
+button{
+    width: auto;
+    font-size: 1.5rem; /* 15px */
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 1.5rem 7rem; /* 15px 70px */
+    margin-top: 2rem; /* 20px */
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #fff; 
+}
+
+.button-light-bg:hover{
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Header styles */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: transparent;
+    position: fixed;
+    width: 100%; 
+    z-index: 1000;
+}
+
+header.scrolled {
+    background-color: var(--dark-text);
+}
+
+/**Menu desktop*/
+.main-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem; /* 30px */
+}
+
+.main-nav ul li {
+    font-size: 1.5rem; /* 15px */
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* Menu mobile */
+
+.modalMenu {
+    background-color: var(--accent-color);
+    height: 100vh;
+    position: fixed;
+    top: -150vh;
+    left: 0;
+    width: 100%;
+    opacity: 0.9;
+    transition: top 0.9s;
+}
+
+.displayMenuMobile {
+    top: 0;
+}
+
+.navbar-mobile .icone {
+    position: fixed;
+    top: 0.9rem; /* 9px */
+    right: 1.5rem; /* 15px */
+    font-size: 3rem;
+    color: white;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.navbar-mobile {
+    display: none;
+}
+
+.navbar-mobile-list {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-mobile .navbar-mobile-list a {
+    font-size: 2.4rem; /* 24px */
+    font-weight: 500;
+    color: var(--background-color);
+    padding: 1rem; /* 10px */
+}
+
+.logo {
+    width: 20rem; /* 200px */
+}
+
+.buttons {
+    display: flex;
+    margin-bottom: 2rem; /* 20px */
+    gap: 2rem; /* 20px */
+}
+
+.lang{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1.5rem 2rem; /* 15px 20px */
+}
+
+@media screen and (max-width: 70rem) { /* 700px */
+
+   .buttons {
+    display: none;
+   }
+   .main-nav {
+            display: none;
+        }
+    
+    .navbar-mobile {
+            display: block;
+        } 
+    
+    .mobile-buttons .connect {
+        background-color: var(--background-color);
+        color: var(--accent-color);
+    }
+
+    .logo {
+        padding: 1.5rem;
+    }
+
+}
+
+
+
+/* header-homepage section styles */
+.header-homepage {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image:linear-gradient(
+        rgba(2, 45, 69, 0.5),
+        rgba(2, 45, 69, 0.5)
+      ), url('../img/bateau-sur-plan-d-eau.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.tabs-button {
+    display: flex;
+}
+
+.tabcontent {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem; /* 20px */
+    padding: 0 4rem; /* 0px 40px */
+    max-width: 1200px;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 4rem; /* 40px */
+    background-color: #F6F7FF;
+    border: none;
+}
+
+.tabcontent > div:not(:last-child) {
+    width: 20rem; /* 200px */
+    margin: 1rem; /* 10px */
+}
+
+/* Style des boutons des onglets */
+.tablinks {
+    background-color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 1rem 3rem; /* 10px 30px */
+    color: #022D45;
+    text-transform: uppercase;
+}
+
+/* Style pour le bouton actif */
+.tablinks.active {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+#tab1,
+#tab2,
+#tab3 {
+    display: none;
+}
+
+#tab1 {
+    display: flex; /* Affiche le premier onglet par défaut */
+}
+
+/* Style pour le contenu de l'onglet actif */
+
+.search {
+    padding: 2rem 4rem; /* 20px 40px */
+}
+
+.slider {
+    width: 80%;
+    height: 0.2rem; /* 2px */
+    background-color: #ddd;
+    margin: 2rem auto; /* 20px */
+    position: relative;
+}
+
+.thumb {
+    width: 2rem; /* 20px */
+    height: 2rem; /* 20px */
+    border: 0.3rem solid #fff;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    top: -0.9rem; /* -9px */
+    cursor: pointer;
+    z-index: 1;
+}
+
+.slider-bar {
+    position: absolute;
+    height: 0.2rem; /* 2px */
+    background-color: #EA516F;
+    z-index: 0; 
+}
+
+.value-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* For presentation */
+
+.presentation {
+    background-color: var(--accent-color);
+    padding: 5% 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem; /* 30px */
+}
+
+.presentation p {
+    font-size: 2rem; /* 20px */
+    color: #fff;
+}
+
+/* For the shape-container */
+
+.shape-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50rem; /* 500px */
+    position: relative;
+}
+
+.shape {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 50rem; /* 500px */
+}
+
+.shape p {
+    font-size: 2.4rem; /* 24px */
+    color: #fff;
+}
+
+.shape-1 {
+    background-image:linear-gradient(
+        rgba(2, 45, 69, 0.5),
+        rgba(2, 45, 69, 0.5)
+      ),url('../img/roches-brunes-rivage.jpg');
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    clip-path: polygon(0 0, 65% 0, 50% 100%, 0 100%);
+    z-index: 3;
+    padding: 2% 5%;
+    align-items: flex-start;
+}
+
+.shape-2 {
+    background-image:linear-gradient(
+        rgba(2, 45, 69, 0.5),
+        rgba(2, 45, 69, 0.5)
+      ),url('../img/bateaux-blanc-ocean.jpg');
+    position: absolute;
+    right: 30%;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    z-index: 2;
+    padding: 2% 8%;
+    align-items: flex-start;
+}
+
+.shape-3 {
+    background-image:linear-gradient(
+        rgba(2, 45, 69, 0.5),
+        rgba(2, 45, 69, 0.5)
+        ),url('../img/plongeur-dans-l-eau.jpg');
+    position: absolute;
+    left: 60%;
+    clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
+    top: 0;
+    width: 40%;
+    height: 100%;
+    z-index: 2;
+    padding: 2% 8%;
+    align-items: flex-start;
+}
+
+.shape-text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 40rem; /* 400px */
+}
+
+/* For the counter */
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem; /* 50px */
+    margin: 5% 5%;
+}
+
+.counter-container p {
+    font-size: 2rem; /* 20px */
+    color: var(--dark-text);
+}
+
+.counter-value {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 2 columns */
+    grid-gap: 5rem; /* Gap between grid items */
+}
+
+.counter-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.counter-grid span {
+    font-size: 5rem; /* Adjust font size */
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.counter-grid p {
+    margin-top: 5px; /* Adjust margin */
+    color: var(--dark-text);
+    font-size: 1.5rem; /* Adjust font size */
+}
+
+
+/* For the boats */
+
+.boats {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-boat {
+    width: 70%;
+    padding: 7% 5%;
+    background-image: linear-gradient(
+        rgba(2, 45, 69, 0.5),
+        rgba(2, 45, 69, 0.5)), 
+        url('../img/cruise-ship-ocean.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-boat p {
+    background-image: url();
+    color: #fff;
+    font-size: 2rem; /* 20px */
+}
+
+.aside-boat {
+    width: 30%;
+    background-image: url('../img/yacht-blanc-eaux-calmes.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-boat button {
+    margin-top: 5rem; /* 50px */
+}
+
+/* For the slideshow */
+
+.slideshow {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem; /* 30px */
+    overflow: hidden;
+    padding: 5% 5%;
+}
+
+.slideshow h2 {
+    color: var(--dark-text);
+}
+
+.arrows {
+    display: flex;
+    gap: 5rem; /* 50px */
+    padding-top: 3rem; /* 30px */
+}
+
+.arrows-mobile {
+    display: flex;
+    gap: 5rem; /* 50px */
+    padding-top: 1rem; /* 30px */
+    display: none;
+}
+
+.fa-arrow-left, .fa-arrow-right {
+    background-color: #fff;
+    padding: 2rem; /* 20px */
+    box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.slideshow-controler {
+    width: 30%;
+}
+
+.slideshow-container {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem; /* 30px */
+    overflow: hidden;
+}
+
+.slide {
+    height: 40rem; /* 400px */
+    width: 90rem; /* 900px */
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 3rem; /* 30px */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: #FFF;
+    flex: 0 0 70%;
+    transition: transform 0.5s ease;
+}
+
+.slide span {
+    color: var(--accent-color);
+    font-weight: 800;
+}
+
+.slide-1 {
+    background-image:linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(2, 45, 69, 0.7)
+      ),url('../img/photo-yacht-noir-blanc.jpg');
+}
+
+.slide-2 {
+    background-image:linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(2, 45, 69, 0.5)
+      ),url('../img/bateau-croisiere.jpg');
+}
+
+/* For the article-container */
+
+.article-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem; /* 30px */
+    padding: 5% 5%;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 43rem; /* 430px */
+    padding: 3rem; /* 30px */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.article p {
+    font-size: 2.4rem; /* 24px */
+    line-height: 2.6rem; /* 26px */
+    color: #fff;
+    font-weight: 500;
+}
+
+.article1 {
+    background-image:linear-gradient(
+        rgba(0, 0, 0, 0),
+        rgba(2, 45, 69, 0.5)
+      ),url('../img/bateau-mer.jpg');
+}
+
+.article2 {
+    background-image:linear-gradient(
+        rgba(0, 0, 0, 0),
+        rgba(2, 45, 69, 0.5)
+      ),url('../img/bateaux-blanc-ocean.jpg');
+}
+
+.article-presentation {
+    padding: 5rem; /* 50px */
+}
+
+.article-presentation h2 {
+    color: var(--dark-text);
+}
+
+/* For the footer-homepage */
+
+.footer-homepage {
+    background-image:linear-gradient(
+        rgba(2, 45, 69, 0.5),
+        rgba(2, 45, 69, 0.5)
+      ), url("../img/bateau-blanc-et-bleu.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50rem; /* 500px */
+    margin: 5% 5%;
+}
+
+.footer-homepage p, h2 {
+    color: #fff;
+}
+
+/* For the footer */
+
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-bottom: 5%;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 5rem; /* 50px */
+}
+
+.footer-logo img {
+    width: 25rem; /* 250px */
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem; /* 20px */
+    width: 100%;
+}
+
+.footer-logo .phone {
+    color: var(--accent-color);
+    font-size: 3rem;
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.copyright {
+    padding-top: 5rem; /* 50px */
+}
+
+.nav-footer,.social-medias ul li {
+    font-size: 2rem;
+}
+
+/* For screens smaller than 700px */
+/* For screens smaller than 700px */
+@media screen and (max-width: 700px) {
+    /* Adjustments for header */
+    header {
+        justify-content: space-around;
+    }
+    .main-nav ul {
+        display: none;
+    }
+    .navbar-mobile {
+        display: block;
+    }
+    /* Adjustments for buttons */
+    button {
+        padding: 1.5rem 3rem; /* Decrease padding */
+    }
+    /* Adjustments for headings */
+    h1,
+    h2 {
+        font-size: 3rem; /* Decrease font size */
+        line-height: 3.5rem; /* Decrease line height */
+    }
+    h3,
+    span {
+        font-size: 1.3rem; /* Decrease font size */
+        line-height: 2rem; /* Decrease line height */
+    }
+    h4 {
+        font-size: 2.5rem; /* Decrease font size */
+    }
+    /* Adjustments for paragraphs */
+    p {
+        font-size: 1.4rem; /* Decrease font size */
+        line-height: 2.5rem; /* Adjust line height */
+    }
+    /**Menu desktop*/
+    .main-nav ul {
+        display: flex;
+        flex-direction: column; /* Change to column */
+        justify-content: center;
+        align-items: center;
+        gap: 1rem; /* 10px */
+    }
+    .main-nav ul li {
+        font-size: 2rem; /* 20px */
+        text-transform: uppercase;
+        color: #fff;
+    }
+    /* Adjustments for slideshow */
+    .slideshow-container {
+        width: 100%; /* Adjust width */
+    }
+    .slide {
+        flex: 0 0 100%; /* Adjust width */
+    }
+    .arrows {
+        justify-content: center; /* Center arrows */
+    }
+    .shape-container {
+        flex-direction: column; /* Display children in a column */
+        height: auto; /* Reset height */
+    }
+
+    .shape {
+        width: 100%; /* Occupy full width */
+        height: 40vh; /* Reset height */
+        position: relative; /* Change position to relative */
+        padding: 2% 5%; /* Adjust padding */
+    }
+
+    .shape-1, .shape-2, .shape-3 {
+        clip-path: none; /* Remove clip-path */
+        width: 100%; /* Occupy full width */
+        right: auto; /* Reset right position */
+        left: auto; /* Reset left position */
+    }
+
+    .boats {
+        flex-direction: column;
+    }
+
+    .boats > * {
+        width: 100%;
+    }
+
+    .counter-value {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-gap: 30px; /* Gap between grid items */
+    }
+    
+    .counter-grid span {
+        font-size: 3rem; /* Adjust font size */
+    }
+    
+    .counter-grid p {
+        font-size: 1.5rem; /* Adjust font size */
+    }
+
+    .footer-homepage {
+        width: 100%;
+        margin: 5% 0%;
+        padding: 0% 5%;
+    }
+
+    .header-homepage {
+        min-height: 180vh;
+        padding:1rem ;
+    }
+
+    .tabs {
+        padding: 1rem;
+    }
+
+    .tabs-button {
+        justify-content: center;
+    }
+
+    .tabcontent {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 2rem;
+    }
+
+    .tabcontent > div:not(:last-child) {
+        width: 20rem; /* 200px */
+
+    }
+
+    .article-container{
+        flex-direction: column-reverse;
+    }
+
+    .slideshow{
+        flex-direction: column;
+        position: relative;
+    }
+
+    .slideshow-controler{
+        width: 100%;
+    }
+    .arrows-mobile{
+        display: flex;
+    }
+
+    .arrows{
+        display: none;
+    }
+
+    footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    }
+        .footer-logo {
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-medias {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .nav-footer,.social-medias ul li {
+            font-size: 1.4rem;
+        }
+}
+
